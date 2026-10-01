@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleName</key>
+    <string>Friday</string>
+    <key>CFBundleDisplayName</key>
+    <string>Friday</string>
+    <key>CFBundleIdentifier</key>
+    <string>com.roszhan.friday</string>
+    <key>CFBundleVersion</key>
+    <string>1</string>
+    <key>CFBundleShortVersionString</key>
+    <string>0.1.0</string>
+    <key>CFBundlePackageType</key>
+    <string>APPL</string>
+    <key>NSPrincipalClass</key>
+    <string>NSApplication</string>
+    <!-- Background-only app — no Dock icon -->
+    <key>LSUIElement</key>
+    <true/>
+    <!-- Required for microphone access (Python runtime also needs this) -->
+    <key>NSMicrophoneUsageDescription</key>
+    <string>Friday uses the microphone to listen for your wake word and voice commands.</string>
+    <!-- Accessibility for global hotkey -->
+    <key>NSAppleEventsUsageDescription</key>
+    <string>Friday uses Accessibility to switch between apps on your command.</string>
+    <key>LSMinimumSystemVersion</key>
+    <string>13.0</string>
+    <key>NSHighResolutionCapable</key>
+    <true/>
+</dict>
+</plist>

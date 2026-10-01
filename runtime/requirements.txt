@@ -1,0 +1,32 @@
+# SUNDAY Python Runtime Dependencies
+
+# ─── Core runtime ──────────────────────────────────────────────────────────
+fastapi==0.115.0
+uvicorn[standard]==0.32.0
+pydantic==2.9.2
+pydantic-settings==2.6.0
+httpx==0.27.2
+PyYAML==6.0.2
+websockets==13.1
+
+# ─── Audio ─────────────────────────────────────────────────────────────────
+sounddevice==0.5.1
+numpy==2.1.2
+# PyAudio kept as optional fallback (may need: brew install portaudio)
+# PyAudio==0.2.14
+
+# ─── Wake word ─────────────────────────────────────────────────────────────
+openwakeword==0.6.0
+
+# ─── STT (Metal-accelerated on Apple Silicon) ──────────────────────────────
+# Primary: mlx-whisper (requires Apple Silicon + macOS 13+)
+mlx-whisper==0.4.1
+# Fallback: faster-whisper (CPU)
+faster-whisper==1.0.3
+
+# ─── Embeddings (for future semantic memory) ───────────────────────────────
+sentence-transformers==3.3.1
+
+# ─── Dev / testing ─────────────────────────────────────────────────────────
+pytest==8.3.3
+pytest-asyncio==0.24.0

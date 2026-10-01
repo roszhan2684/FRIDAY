@@ -1,0 +1,48 @@
+# FRIDAY Configuration
+# All values can be overridden with FRIDAY_ prefixed environment variables
+# e.g. FRIDAY_OLLAMA_MODEL=llama3.1:8b
+
+runtime:
+  host: "127.0.0.1"
+  port: 7700
+  debug: false
+
+audio:
+  sample_rate: 16000
+  chunk_frames: 1280
+  silence_threshold_seconds: 1.5
+  max_capture_seconds: 15.0
+
+stt:
+  # Metal-accelerated on Apple Silicon
+  # Fallback: faster-whisper with base.en on CPU
+  whisper_model: "mlx-community/whisper-small.en-mlx"
+  whisper_language: "en"
+  confidence_threshold: 0.75
+
+llm:
+  ollama_base_url: "http://localhost:11434"
+  # llama3.2:3b is fast and capable for intent parsing on Apple Silicon
+  # Upgrade to qwen2.5:7b or llama3.1:8b when you want richer reasoning
+  ollama_model: "qwen2.5:1.5b"
+  ollama_timeout: 20
+
+tts:
+  # Primary: Murf.ai neural voice (requires FRIDAY_MURF_API_KEY in .env)
+  # Voice: Judith | Style: Conversational | Model: FALCON
+  # Fallback: macOS built-in say (works offline)
+  murf_voice_id: "en-US-judith"
+  murf_style: "Conversational"
+  tts_voice: "Samantha"
+  tts_rate: 185
+
+wake:
+  # VAD + cosine similarity template matching (no base model needed)
+  # Template: ~/.friday/models/hey_friday_template.npy
+  # Run: bash scripts/train_wakeword.sh to record 30 samples and build template
+  wake_model_path: "~/.friday/models/hey_friday_template.npy"
+  wake_threshold: 0.957  # cosine similarity vs template (positive: >0.99, negative: <0.92)
+
+features:
+  learning_enabled: true
+  confirm_risky_actions: true

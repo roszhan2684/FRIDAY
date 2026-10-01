@@ -1,0 +1,40 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+*.egg-info/
+dist/
+.ruff_cache/
+
+# Environment
+.env
+
+# macOS
+.DS_Store
+*.xcuserstate
+xcuserdata/
+DerivedData/
+
+# SUNDAY local data (stays on device)
+~/.sunday/
+
+# IDE
+.cursor/
+.idea/
+*.swp
+node_modules/
+venv/
+.env.local
+.env.production
+.env.*.local
+build/
+.vscode/
+.next/
+.build/
+*.db
+*.sqlite
+*.sqlite3
+*.log
+.swiftpm/
